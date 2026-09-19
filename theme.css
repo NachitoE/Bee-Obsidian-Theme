@@ -1,9 +1,7 @@
-/* Wasp — Obsidian theme by Santi Younger */
+/* Bee — Obsidian theme, based on Wasp by Santi Younger */
 
-/* Shared (both color schemes) — per Obsidian "Build a theme" guidance */
 body {
 	--font-monospace: "Source Code Pro", monospace;
-	/* Heading scale (reading + live preview) — matches Obsidian defaults */
 	--h1-size: 1.802em;
 	--h2-size: 1.556em;
 	--h3-size: 1.344em;
@@ -18,9 +16,7 @@ body {
 	--h6-weight: 600;
 }
 
-/* ── Dark palette ─────────────────────────────────────────────────────────── */
 .theme-dark {
-	/* Base scale — required for community palette contrast checks (WCAG 4.5:1 on base-10) */
 	--color-base-00: #191919;
 	--color-base-05: #1f1f1f;
 	--color-base-10: #242424;
@@ -38,7 +34,7 @@ body {
 	--background-primary-alt: var(--color-base-10);
 	--background-secondary: var(--color-base-00);
 	--background-secondary-alt: var(--color-base-30);
-	--background-modifier-border: #f8c537;
+	--background-modifier-border: rgba(248, 197, 55, 0.25);
 	--background-modifier-hover: rgba(255, 255, 255, 0.06);
 
 	--text-normal: #faf2d6;
@@ -73,7 +69,6 @@ body {
 	--interactive-before: #9a9284;
 	--vim-cursor: #f8c537;
 
-	/* Graph view */
 	--graph-node: rgb(var(--interactive-accent-rgb));
 	--graph-line: rgb(var(--interactive-accent-rgb));
 	--graph-node-focused: rgb(var(--interactive-accent-rgb));
@@ -81,7 +76,6 @@ body {
 
 	--callout-title-color: var(--text-normal);
 
-	/* File tree — hover subtle; active = darker amber + white text (not bright gold) */
 	--wasp-nav-active-background: #7A5C14;
 	--nav-item-background-hover: var(--background-modifier-hover);
 	--nav-item-background-active: var(--wasp-nav-active-background);
@@ -90,7 +84,6 @@ body {
 	--nav-collapse-icon-color: var(--text-faint);
 	--nav-collapse-icon-color-collapsed: var(--text-faint);
 
-	/* Wasp-specific UI (settings buttons, etc.) */
 	--button-bg-color: #D49335;
 	--button-text-color: #242424;
 	--button-hover-bg-color: #DAA520;
@@ -99,9 +92,7 @@ body {
 	--text-sub-accent: var(--text-accent);
 }
 
-/* ── Light palette ────────────────────────────────────────────────────────── */
 .theme-light {
-	/* Base scale — required for community palette contrast checks (WCAG 4.5:1 on base-10) */
 	--color-base-00: #faf6f0;
 	--color-base-05: #fffcf7;
 	--color-base-10: #faf6f0;
@@ -119,7 +110,7 @@ body {
 	--background-primary-alt: var(--color-base-05);
 	--background-secondary: var(--color-base-20);
 	--background-secondary-alt: var(--color-base-30);
-	--background-modifier-border: #C87628;
+	--background-modifier-border: rgba(200, 118, 40, 0.25);
 	--background-modifier-hover: rgba(120, 72, 24, 0.08);
 
 	--text-normal: #2C2419;
@@ -166,7 +157,6 @@ body {
 	--nav-item-color-hover: var(--text-normal);
 	--nav-item-color-active: var(--text-on-accent);
 
-	/* Workspace tabs — clear bar vs active pane */
 	--tab-container-background: #E8DFD0;
 	--tab-background-active: var(--background-primary);
 	--tab-text-color: #5C5044;
@@ -191,7 +181,6 @@ body {
 	--text-sub-accent: var(--text-accent);
 }
 
-/* Dark: active file row — ensure white label/icons on darker amber bar */
 .theme-dark .tree-item-self.nav-file-title.is-active,
 .theme-dark .tree-item-self.nav-folder-title.is-active {
 	--icon-color: var(--nav-item-color-active);
@@ -209,7 +198,6 @@ body {
 	stroke: var(--nav-item-color-active);
 }
 
-/* ── Dark: selection & search (gold highlight needs dark foreground) ───── */
 .theme-dark .cm-s-obsidian span.obsidian-search-match-highlight {
 	color: var(--text-normal);
 	background-color: #483699;
@@ -235,7 +223,6 @@ body {
 	color: var(--text-on-accent);
 }
 
-/* ── Light: selection, tabs, editor syntax ──────────────────────────────── */
 .theme-light ::selection,
 .theme-light .markdown-preview-view ::selection,
 .theme-light .markdown-rendered ::selection,
@@ -256,7 +243,6 @@ body {
 	color: var(--text-on-accent);
 }
 
-/* Light: workspace tab chrome (icons + titles follow tab variables) */
 .theme-light .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title,
 .theme-light .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon {
 	color: var(--tab-text-color);
@@ -275,7 +261,6 @@ body {
 	stroke: var(--tab-text-color-focused-active);
 }
 
-/* Light: faint editor markers — quotes/callouts only (not bold/italic) */
 .theme-light .cm-s-obsidian span.cm-formatting-quote,
 .theme-light .cm-s-obsidian span.cm-hmd-callout,
 .theme-light .cm-s-obsidian span.cm-quote,
@@ -286,9 +271,6 @@ body {
 	opacity: 1;
 }
 
-/* Headings: sizes/weights on body, colors on .theme-* — Obsidian applies them in reading + edit (#10) */
-
-/* Graph view highlights (WebGL bridge) */
 .theme-dark .graph-view.color-circle,
 .theme-dark .graph-view.color-fill-highlight,
 .theme-dark .graph-view.color-line-highlight,
@@ -298,7 +280,6 @@ body {
 	color: rgb(var(--interactive-accent-rgb));
 }
 
-/* ── Misc editor / UI ───────────────────────────────────────────────────── */
 .cm-s-obsidian span.cm-formatting-link {
 	color: var(--text-normal);
 }
@@ -310,9 +291,6 @@ body .markdown-source-view .CodeMirror-guttermarker-subtle {
 .theme-light .vertical-tab-header-group-title {
 	color: var(--text-white);
 }
-
-/*-----------------------------------------*/
-/* End of main theme, extra functionality can be added below */
 
 .markdown-source-view {
 	font-family: var(--font-monospace);
@@ -388,17 +366,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus {
 	color: var(--button-text-color);
 }
 
-/** hr styles — PREVIEW MODE */
 .cm-line hr,
 .markdown-preview-view hr {
 	margin-block-start: 4em;
 	margin-block-end: 4em;
 	border: none;
-	height: 0;
-	border-bottom: 1px solid;
-	border-image-slice: 1;
-	border-width: 1px;
-	border-image-source: linear-gradient(to right, transparent, var(--text-accent), transparent);
+	height: 1px;
+	background: linear-gradient(to right, transparent, var(--text-accent), transparent);
 }
 
 .cm-line hr::after,
