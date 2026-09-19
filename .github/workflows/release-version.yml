@@ -7,7 +7,6 @@ on:
       - master
     paths:
       - manifest.json
-  workflow_dispatch:
 
 permissions:
   contents: write
